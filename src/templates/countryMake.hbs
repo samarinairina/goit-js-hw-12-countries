@@ -1,0 +1,13 @@
+<li class="d-block">
+    <div class="wrapper d-flex p-5">
+        <div class="date d-flex flex-column">
+            <h2 class="country-name mb-2">{{name}}</h2>
+            <span class=" mb-2">Capital: {{capital}}</span>
+            <span class=" mb-2">Population: {{population}}</span>
+            <ul class="list-unstyled">Languages: {{#each languages}}<li><span class="p-4">{{name}}</span>
+                </li>{{/each}}
+            </ul>
+        </div>
+        <img src="{{flag}}" alt="flag" width="400px" height="300px" class="ml-5">
+    </div>
+</li>
