@@ -13,6 +13,9 @@ const refs = {
 
 const getQuery = function (e) {
   e.preventDefault();
+  if (e.target.value.trim().length === 0) {
+    return
+  }
 
   fetchCountries(e.target.value)
     .then(data => {
@@ -23,7 +26,7 @@ const getQuery = function (e) {
           text: 'Please, specify your request!',
         });
       }
-      if (data.length > 1 && data.length < 10) {
+      if (data.length >= 2 && data.length < 10) {
         refs.list.innerHTML = '';
         data.forEach(country => {
           refs.list.insertAdjacentHTML('afterbegin', makeList(country));
