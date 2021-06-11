@@ -1,3 +1,5 @@
+import { error } from '../js/pnotify.js';
+
 const fetchCountries = function (searchQuery) {
  
   return fetch(
@@ -9,6 +11,6 @@ const fetchCountries = function (searchQuery) {
       title: 'Error',
       text: 'Sorry, country not found!',
     })
-  })
+      })
 };
 export default fetchCountries;

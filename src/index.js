@@ -13,11 +13,13 @@ const refs = {
 
 const getQuery = function (e) {
   e.preventDefault();
-  if (e.target.value.trim().length === 0) {
+  let query = e.target.value.trim()
+    
+  if (query.length === 0) {
     return
   }
 
-  fetchCountries(e.target.value)
+  fetchCountries(query)
     .then(data => {
       if (data.length > 10) {
         error({
@@ -42,7 +44,7 @@ const getQuery = function (e) {
         title: 'Error',
         text: 'Sorry, country not found!',
       });
-    });
+    })
 };
 
 refs.query.addEventListener('input', debounce(getQuery, 500));
